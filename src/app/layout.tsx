@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="m-0 list-none">
         <Header />
-        <main className="font-montserrat flex flex-col justify-between items-center p-24 min-h-screen">
+        <main>
           {children}
         </main>
       </body>

@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Header = () => {
   return (
-    <header className='font-roboto flex justify-between bg-primary text-white px-5'>
+    <header className='font-roboto flex items-center justify-between bg-primary text-white px-5'>
       <div>
         <p>MyMovieApp</p>
       </div>
       <div className="flex justify-end flex-[0.5] gap-5">
         <nav className="flex gap-5 mr-5">
-          <ul>
+          <ul className="flex gap-5 mr-5">
             <li>Séries</li>
             <li>Films</li>
           </ul>
