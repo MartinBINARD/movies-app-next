@@ -1,23 +1,22 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from './Header.module.scss';
 
 export const Header = () => {
   return (
-    <header className={`${styles.header} font-roboto`}>
+    <header className='font-roboto flex justify-between bg-primary text-white px-5'>
       <div>
         <p>MyMovieApp</p>
       </div>
-      <div>
-        <nav>
+      <div className="flex justify-end flex-[0.5] gap-5">
+        <nav className="flex gap-5 mr-5">
           <ul>
             <li>Séries</li>
             <li>Films</li>
           </ul>
         </nav>
       </div>
-      <input type="text" placeholder="Rechercher un titre ..." />
-      <div>
+      <input type="text" placeholder="Rechercher un titre ..." className="min-w-300 my-2.5 rounded-lg border-0 pl-2.5 outline-none" />
+      <div className="flex items-center">
         <FontAwesomeIcon icon={faUser} />
       </div>
     </header>

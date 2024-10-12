@@ -14,9 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="m-0 list-none">
         <Header />
-        <main className="font-montserrat">
+        <main className="font-montserrat flex flex-col justify-between items-center p-24 min-h-screen">
           {children}
         </main>
       </body>

@@ -13,8 +13,8 @@ const config: Config = {
         "montserrat": ["var(--font-montserrat)', 'serif"],
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#304886",
+        white: "#fff",
       },
     },
   },
