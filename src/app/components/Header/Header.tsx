@@ -1,13 +1,10 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Roboto } from "next/font/google";
 import styles from './Header.module.scss';
-
-const roboto = Roboto({subsets: ["latin"], weight: ["100", "300"]});
 
 export const Header = () => {
   return (
-    <header className={`${styles.header} ${roboto.className}`}>
+    <header className={`${styles.header} font-roboto`}>
       <div>
         <p>MyMovieApp</p>
       </div>

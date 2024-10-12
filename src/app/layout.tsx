@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        <main>
+        <main className="font-montserrat">
           {children}
         </main>
       </body>

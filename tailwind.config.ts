@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "roboto": ["var(--font-roboto)', 'sans-serif"],
+        "montserrat": ["var(--font-montserrat)', 'serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
