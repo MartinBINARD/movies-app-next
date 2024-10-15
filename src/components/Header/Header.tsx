@@ -23,7 +23,7 @@ export const Header = () => {
           </ul>
         </nav>
       </div>
-      <MovieSearch className="min-w-300 my-2.5 rounded-lg border-0 pl-2.5 outline-none"/>
+      <MovieSearch />
       <div className="flex items-center">
         <FontAwesomeIcon icon={faUser} />
       </div>
