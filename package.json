@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "next": "14.2.15",
     "react": "^18",
+    "react-debounce-input": "^3.3.0",
     "react-dom": "^18",
     "sass": "^1.79.4",
     "server-only": "^0.0.1"
