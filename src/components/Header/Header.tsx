@@ -1,6 +1,7 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { MovieSearch } from "../MovieSearch/MovieSearch";
 
 export const Header = () => {
   return (
@@ -22,7 +23,7 @@ export const Header = () => {
           </ul>
         </nav>
       </div>
-      <input type="text" placeholder="Rechercher un titre ..." className="min-w-300 my-2.5 rounded-lg border-0 pl-2.5 outline-none" />
+      <MovieSearch className="min-w-300 my-2.5 rounded-lg border-0 pl-2.5 outline-none"/>
       <div className="flex items-center">
         <FontAwesomeIcon icon={faUser} />
       </div>
