@@ -7,7 +7,7 @@ type genreType = {
 }
 
 export const Genres = async () => {
-  const { genres } = await getMovieByPath({path: '/genre/movie/list'});
+  const { genres } = await getMovieByPath({path: '/genre/movie/list', params: []});
 
   return (
     <div>

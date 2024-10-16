@@ -2,7 +2,7 @@ import { getMovieByPath } from "@/utils/movieClient";
 import { MediaCard, MediaCardProps } from "../media-card/MediaCard";
 
 export const Popular = async () => {
-  const { results } = await getMovieByPath({path: '/movie/popular'});
+  const { results } = await getMovieByPath({path: '/movie/popular', params: []});
   
   const polularMovies = results.slice(0, 6);
 
