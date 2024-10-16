@@ -8,7 +8,7 @@ export const Popular = async () => {
 
   return (
     <div>
-      <h2>Les plus populaires</h2>
+      <h2 className="font-roboto text-secondary font-bold text-2xl mt-10 mb-5">Les plus populaires</h2>
       <div className="flex gap-[30px]">
       {polularMovies && polularMovies.map((movie: MediaCardProps) => (
           <MediaCard 

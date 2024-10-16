@@ -23,9 +23,9 @@ export const MediaCard = (media: MediaCardProps) => {
             className="rounded-t-lg"
           />
         </div>
-        <div className="relative py-[5px] px-[10px]">
-          <p className="absolute z-2 top-[-15px] w-[30px] h-[30px] m-0 flex justify-center items-center border border-primary rounded-full bg-white">{vote_average}</p>
-          <h3 className="text-base font-bold mt-4 mb-1">{title}</h3>
+        <div className="relative py-3 px-2.5">
+          <p className="absolute z-2 top-[-18px] w-9 h-9 m-0 flex justify-center items-center border border-primary rounded-full bg-white">{vote_average}</p>
+          <h3 className="text-base font-bold mt-4 mb-2">{title}</h3>
           <p className="text-xs font-light">Le {new Date(release_date).toLocaleDateString("fr-FR")}</p>
         </div>
       </Link>
