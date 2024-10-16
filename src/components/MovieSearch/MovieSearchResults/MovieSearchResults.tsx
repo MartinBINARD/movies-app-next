@@ -15,12 +15,13 @@ export interface MovieSearchResultsProps {
 export const MovieSearchResults = ({ movieResults }: MovieSearchResultsProps) => {
   
   return (
-    <div className="absolute z-10 bg-white top-11 p-[10px] shadow-[0_2px_8px_0_rgba(0,0,0,0.15)] font-montserrat">
+    <div className="absolute w-full z-10 bg-white top-11 p-[10px] shadow-[0_2px_8px_0_rgba(0,0,0,0.15)] font-montserrat">
       {movieResults?.map((movie: Movie) => (
-        <div key={movie.id} className="flex items-center py-[10px] border-b border-gray-200">
+        <div key={movie.id}>
           <Link
             href={`/movies/${movie.id}`}
             onMouseDown={(e) => e.preventDefault()}
+            className="flex items-center py-[10px] border-b border-gray-200"
           >
             <Image
               width={90}

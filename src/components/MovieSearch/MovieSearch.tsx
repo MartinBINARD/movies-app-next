@@ -25,7 +25,7 @@ export const MovieSearch = () => {
         placeholder="Rechercher un titre..."
         onBlurCapture={() => setHasFocus(false)}
         onFocus={() => setHasFocus(true)}
-        className="min-w-300 my-2.5 rounded-lg border-0 pl-2.5 outline-none text-black"
+        className="min-w-[300px] my-2.5 rounded-lg border-0 pl-2.5 outline-none text-black"
       />
       {movieResults.length > 0 && hasFocus && (
         <MovieSearchResults movieResults={movieResults} />

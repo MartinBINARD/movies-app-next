@@ -11,8 +11,8 @@ export const Header = () => {
           <Link href="/">MyMovieApp</Link>
         </p>
       </div>
-      <div className="flex justify-end flex-[0.5] gap-5">
-        <nav className="flex gap-5 mr-5">
+      <div className="flex items-center justify-end flex-[0.5] gap-5">
+        <nav>
           <ul className="flex gap-5 mr-5">
             <li>
               <Link href="/series">Séries</Link>
@@ -22,10 +22,10 @@ export const Header = () => {
             </li>
           </ul>
         </nav>
-      </div>
-      <MovieSearch />
-      <div className="flex items-center">
-        <FontAwesomeIcon icon={faUser} />
+        <MovieSearch />
+        <div className="flex items-center">
+          <FontAwesomeIcon icon={faUser} />
+        </div>
       </div>
     </header>
   );
