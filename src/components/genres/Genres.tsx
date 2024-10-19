@@ -1,7 +1,7 @@
 import { getMovieByPath } from "@/utils/movieClient";
 import Link from "next/link";
 
-type genreType = {
+export type GenreType = {
   id: number;
   name: string;
 }
@@ -13,7 +13,7 @@ export const Genres = async () => {
     <div>
       <h2 className="font-roboto text-secondary font-bold text-2xl mt-10 mb-5">Parcourir par genres</h2>
       <div className="flex flex-wrap gap-5">
-        {genres && genres.map((genre: genreType) => (
+        {genres && genres.map((genre: GenreType) => (
           <div key={genre.id} className="flex-none w-[20%] bg-primary text-white text-center py-2.5">
             <Link href={`/movies/genres/${genre.id}`}>
               <p className="m-0">{genre.name}</p>
