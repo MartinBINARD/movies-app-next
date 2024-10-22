@@ -13,7 +13,7 @@ export const MediaCard = (media: MediaCardProps) => {
   const { id, title, poster_path, vote_average, release_date } = media;
   
   return (
-    <div className="font-montserrat min-w-52 rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.25)]">
+    <div className="font-montserrat w-52 rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.25)]">
       <Link href={`/movies/${id}`}>
         <div className="relative w-full h-[300px] overflow-hidden">
         <Image

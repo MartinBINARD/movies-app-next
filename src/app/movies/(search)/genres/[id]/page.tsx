@@ -1,12 +1,13 @@
+import SearchResults from "../../SearchResults";
+
 interface GenreIdPageProps {
   params: {id: string };
+  searchParams: Record<string, string>;
 }
 
-export const GenreIdPage = ({params}: GenreIdPageProps) => {
+export const GenreIdPage = ({ params, searchParams }: GenreIdPageProps) => {
   return (
-    <div>
-      <p>Genre id : {params.id}</p>
-    </div>
+    <SearchResults searchParams={searchParams} genreId={params.id} />
   );
 }
 

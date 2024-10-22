@@ -1,6 +1,12 @@
-const MoviesPage = () => {
+import SearchResults from "./SearchResults";
+
+interface MoviesPageProps {
+  searchParams: Record<string, string>;
+}
+
+const MoviesPage = ({ searchParams }: MoviesPageProps) => {
   return (
-    <div>MoviesPage</div>
+    <SearchResults searchParams={searchParams} genreId="" />
   )
 }
 
