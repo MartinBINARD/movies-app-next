@@ -1,8 +1,15 @@
 import { MediaCard, MediaCardProps } from "@/components/media-card/MediaCard";
 import { getMovieByPath } from "@/utils/movieClient";
+import { ReadonlyURLSearchParams } from "next/navigation";
+
+export interface SearchParamsType extends ReadonlyURLSearchParams {
+  sort_by: string | null;
+  "release_date.gte": string | null;
+  "release_date.lte": string | null;
+}
 
 interface SearchResultsProps {
-  searchParams: Record<string, string>;
+  searchParams: SearchParamsType;
   genreId: string;
 }
 
@@ -10,9 +17,9 @@ const SearchResults = async ({ searchParams, genreId }: SearchResultsProps) => {
   const { results } = await getMovieByPath({
     path: '/discover/movie',
     params: [
-      { key: "sort_by", value: searchParams.sort_by },
-      { key: "release_date.gte", value: searchParams["release_date.gte"] },
-      { key: "release_date.lte", value: searchParams["release_date.lte"] },
+      { key: "sort_by", value: searchParams.sort_by || '' },
+      { key: "release_date.gte", value: searchParams["release_date.gte"] || '' },
+      { key: "release_date.lte", value: searchParams["release_date.lte"] || '' },
       { key: "with_genres", value: genreId },
     ]
   });

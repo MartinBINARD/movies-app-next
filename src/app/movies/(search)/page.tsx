@@ -1,7 +1,7 @@
-import SearchResults from "./SearchResults";
+import SearchResults, { SearchParamsType } from "./SearchResults";
 
 interface MoviesPageProps {
-  searchParams: Record<string, string>;
+  searchParams: SearchParamsType;
 }
 
 const MoviesPage = ({ searchParams }: MoviesPageProps) => {

@@ -1,6 +1,7 @@
 import { getMovieByPath, GetMovieByPathProps } from "@/utils/movieClient";
+import { NextRequest } from "next/server";
 
-export const GET = async (request: { url: string | URL; }) => {
+export const GET = async (request: NextRequest) => {
   const { searchParams } = new URL(request.url);
   const query = searchParams.get('query');
 
