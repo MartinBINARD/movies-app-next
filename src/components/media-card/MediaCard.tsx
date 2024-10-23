@@ -17,7 +17,7 @@ export const MediaCard = (media: MediaCardProps) => {
       <Link href={`/movies/${id}`}>
         <div className="relative w-full h-[300px] overflow-hidden">
         <Image
-            src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}${poster_path}`}
+            src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${poster_path}`}
             alt={title}
             fill
             className="rounded-t-lg"

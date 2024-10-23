@@ -28,7 +28,7 @@ export const MovieSearchResults = ({ movieResults }: MovieSearchResultsProps) =>
               height={50}
               className="shadow-[0_2px_8px_0_rgba(0,0,0,0.15)]"
               alt={movie.title}
-              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}${movie.backdrop_path}`}
+              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${movie.backdrop_path}`}
             />
             <p className="text-xs font-medium text-black ml-[10px] hover:text-secondary">{movie.title}</p>
           </Link>
