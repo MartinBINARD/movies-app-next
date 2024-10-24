@@ -21,7 +21,7 @@ export const MovieCredits = async ({ movieId }: MovieCreditsProps) => {
     <div className="flex gap-6">
       {cast &&
         cast.slice(0, 4).map((person: PersonProps) => (
-          <div key={person.id} className="flex flex-col items-center">
+          <div key={person.id} className="flex flex-col items-center gap-2">
             <Image
               src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w185${person.profile_path}`}
               width={90}

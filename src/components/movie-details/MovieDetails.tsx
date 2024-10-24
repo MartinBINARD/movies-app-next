@@ -15,8 +15,6 @@ interface MovieDetailsProps {
 }
 
 export const MovieDetails = ({ movie }: MovieDetailsProps) => {
-  console.log(movie);
-
   return (
     <div className="relative w-full min-h-[60vh]">
       <div className="absolute inset-0 after:absolute after:z-20 after:inset-0 after:bg-[#041226]/80">
