@@ -12,9 +12,12 @@ interface MovieIdPageProps {
 }
 
 const MovieIdPage = async ({ params }: MovieIdPageProps) => {
-  const movie =await getMovieByPath({path: `/movie/${params.id}`, params: []});
+  const movie = await getMovieByPath({
+    path: `/movie/${params.id}`,
+    params: [],
+  });
 
-  if(!movie.original_title) {
+  if (!movie.original_title) {
     return notFound();
   }
 
@@ -22,7 +25,7 @@ const MovieIdPage = async ({ params }: MovieIdPageProps) => {
     <div>
       <MovieDetails movie={movie} />
     </div>
-  )
-}
+  );
+};
 
 export default MovieIdPage;

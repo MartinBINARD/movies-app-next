@@ -11,12 +11,12 @@ export interface MediaCardProps {
 
 export const MediaCard = (media: MediaCardProps) => {
   const { id, title, poster_path, vote_average, release_date } = media;
-  
+
   return (
     <div className="font-montserrat w-52 rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.25)]">
       <Link href={`/movies/${id}`}>
         <div className="relative w-full h-[300px] overflow-hidden">
-        <Image
+          <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${poster_path}`}
             alt={title}
             fill
@@ -24,11 +24,15 @@ export const MediaCard = (media: MediaCardProps) => {
           />
         </div>
         <div className="relative py-3 px-2.5">
-          <p className="absolute z-2 top-[-18px] w-9 h-9 m-0 flex justify-center items-center border border-primary rounded-full bg-white">{vote_average}</p>
+          <p className="absolute z-2 top-[-18px] w-9 h-9 m-0 flex justify-center items-center border border-primary rounded-full bg-white">
+            {vote_average}
+          </p>
           <h3 className="text-base font-bold mt-4 mb-2">{title}</h3>
-          <p className="text-xs font-light">Le {new Date(release_date).toLocaleDateString("fr-FR")}</p>
+          <p className="text-xs font-light">
+            Le {new Date(release_date).toLocaleDateString("fr-FR")}
+          </p>
         </div>
       </Link>
-  </div>
-  )
-}
+    </div>
+  );
+};

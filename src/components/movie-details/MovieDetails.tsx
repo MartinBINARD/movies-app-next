@@ -1,8 +1,6 @@
 import Image from "next/image";
 
-interface MovieDetailsProps {
-
-}
+interface MovieDetailsProps {}
 
 export const MovieDetails = ({ movie }: MovieDetailsProps) => {
   console.log(movie);
@@ -35,4 +33,4 @@ export const MovieDetails = ({ movie }: MovieDetailsProps) => {
       </div>
     </div>
   );
-}
+};

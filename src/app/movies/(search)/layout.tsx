@@ -6,8 +6,13 @@ interface MovieSearchLayoutProps {
   children: ReactNode;
 }
 
-export const MovieSearchLayout: React.FC<MovieSearchLayoutProps> = async ({ children }: MovieSearchLayoutProps) => {
-  const { genres } = await getMovieByPath({path: '/genre/movie/list', params: []});
+export const MovieSearchLayout: React.FC<MovieSearchLayoutProps> = async ({
+  children,
+}: MovieSearchLayoutProps) => {
+  const { genres } = await getMovieByPath({
+    path: "/genre/movie/list",
+    params: [],
+  });
 
   return (
     <div className="flex my-0 mx-8">
@@ -15,6 +20,6 @@ export const MovieSearchLayout: React.FC<MovieSearchLayoutProps> = async ({ chil
       <div>{children}</div>
     </div>
   );
-}
+};
 
 export default MovieSearchLayout;

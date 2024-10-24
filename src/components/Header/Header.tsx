@@ -5,7 +5,7 @@ import { MovieSearch } from "../MovieSearch/MovieSearch";
 
 export const Header = () => {
   return (
-    <header className='font-roboto flex items-center justify-between bg-primary text-white px-5'>
+    <header className="font-roboto flex items-center justify-between bg-primary text-white px-5">
       <div>
         <p>
           <Link href="/">MyMovieApp</Link>
@@ -29,4 +29,4 @@ export const Header = () => {
       </div>
     </header>
   );
-}
+};

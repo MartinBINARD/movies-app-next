@@ -25,11 +25,13 @@ export const SearchSidebar = ({ genres }: SearchSidebarProps) => {
     return genre?.name;
   };
   const title = getSideBarTitle();
-  
+
   return (
     <div>
-      <h1 className="text-xl text-secondary font-bold mt-5 mb-6">Tous les &quot;{title}&quot;</h1>
+      <h1 className="text-xl text-secondary font-bold mt-5 mb-6">
+        Tous les &quot;{title}&quot;
+      </h1>
       <Form />
     </div>
   );
-}
+};

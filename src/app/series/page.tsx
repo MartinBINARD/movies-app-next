@@ -1,7 +1,5 @@
 const SeriesPage = () => {
-  return (
-    <div>SeriesPage</div>
-  )
-}
+  return <div>SeriesPage</div>;
+};
 
 export default SeriesPage;

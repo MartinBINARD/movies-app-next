@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import { DebounceInput } from "react-debounce-input";
@@ -11,16 +11,20 @@ export const MovieSearch = () => {
   const updateMobieSearch = async (query: string) => {
     const response = await fetch(`/api/movies/search?query=${query}`);
     const { results } = await response.json();
-    
-    setMovieResults(results.filter((movie: { backdrop_path: unknown; }) => movie.backdrop_path))
-  }
+
+    setMovieResults(
+      results.filter(
+        (movie: { backdrop_path: unknown }) => movie.backdrop_path,
+      ),
+    );
+  };
 
   return (
     <div className="relative">
       <DebounceInput
         minLength={2}
         debounceTimeout={500}
-        onChange={e => updateMobieSearch(e.target.value)}
+        onChange={(e) => updateMobieSearch(e.target.value)}
         type="text"
         placeholder="Rechercher un titre..."
         onBlurCapture={() => setHasFocus(false)}
@@ -32,4 +36,4 @@ export const MovieSearch = () => {
       )}
     </div>
   );
-}
+};

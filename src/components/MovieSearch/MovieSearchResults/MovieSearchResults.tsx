@@ -2,18 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface Movie {
-  adult: boolean,
-  backdrop_path: string,
-  id: number,
-  title: string,
+  adult: boolean;
+  backdrop_path: string;
+  id: number;
+  title: string;
 }
 
 export interface MovieSearchResultsProps {
   movieResults: Movie[];
 }
 
-export const MovieSearchResults = ({ movieResults }: MovieSearchResultsProps) => {
-  
+export const MovieSearchResults = ({
+  movieResults,
+}: MovieSearchResultsProps) => {
   return (
     <div className="absolute w-full z-10 bg-white top-11 p-[10px] shadow-[0_2px_8px_0_rgba(0,0,0,0.15)] font-montserrat">
       {movieResults?.map((movie: Movie) => (
@@ -30,10 +31,12 @@ export const MovieSearchResults = ({ movieResults }: MovieSearchResultsProps) =>
               alt={movie.title}
               src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${movie.backdrop_path}`}
             />
-            <p className="text-xs font-medium text-black ml-[10px] hover:text-secondary">{movie.title}</p>
+            <p className="text-xs font-medium text-black ml-[10px] hover:text-secondary">
+              {movie.title}
+            </p>
           </Link>
         </div>
       ))}
     </div>
   );
-}
+};
