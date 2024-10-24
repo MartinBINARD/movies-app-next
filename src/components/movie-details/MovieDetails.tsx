@@ -1,6 +1,18 @@
 import Image from "next/image";
+import { Suspense } from "react";
+import { MovieCredits } from "../movie-credits/MovieCredits";
 
-interface MovieDetailsProps {}
+interface MovieDetailsProps {
+  movie: {
+    id: number;
+    title: string;
+    backdrop_path: string;
+    poster_path: string;
+    release_date: string;
+    overview: string;
+    prodcution_companies: { name: string }[];
+  };
+}
 
 export const MovieDetails = ({ movie }: MovieDetailsProps) => {
   console.log(movie);
@@ -29,6 +41,26 @@ export const MovieDetails = ({ movie }: MovieDetailsProps) => {
               ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
             </span>
           </h1>
+          <p className="text-sm">
+            Production :{" "}
+            <span>
+              {movie.prodcution_companies &&
+                movie.prodcution_companies
+                  .map((company) => company.name)
+                  .join(", ")}
+            </span>
+          </p>
+          <h2 className="text-xl font-medium text-white ml-2 my-0 mr-0">
+            Synopsis
+          </h2>
+          <p className="font-light text-xs leading-4 overflow-hidden">
+            {movie.overview}
+          </p>
+          <div className="mt-auto">
+            <Suspense fallback={<p>Chargement...</p>}>
+              <MovieCredits movieId={movie.id} />
+            </Suspense>
+          </div>
         </div>
       </div>
     </div>
