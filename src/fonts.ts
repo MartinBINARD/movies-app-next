@@ -1,13 +1,13 @@
-import { Montserrat, Roboto } from "next/font/google";
+import { Montserrat, Roboto } from 'next/font/google';
 
 export const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["100", "300"],
-  variable: "--font-roboto",
+  subsets: ['latin'],
+  weight: ['100', '300'],
+  variable: '--font-roboto',
 });
 
 export const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["100", "300", "500", "700"],
-  variable: "--font-montserrat",
+  subsets: ['latin'],
+  weight: ['100', '300', '500', '700'],
+  variable: '--font-montserrat',
 });

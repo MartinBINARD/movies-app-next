@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { notFound, useParams, useSelectedLayoutSegment } from "next/navigation";
-import { GenreType } from "../genres/Genres";
-import { Form } from "./form/Form";
+import { notFound, useParams, useSelectedLayoutSegment } from 'next/navigation';
+import { GenreType } from '../genres/Genres';
+import { Form } from './form/Form';
 
 interface SearchSidebarProps {
   genres: GenreType[];
@@ -14,7 +14,7 @@ export const SearchSidebar = ({ genres }: SearchSidebarProps) => {
 
   const getSideBarTitle = () => {
     if (!segment) {
-      return "Films";
+      return 'Films';
     }
     const genre = genres.find((genre) => genre.id === Number(id));
 
@@ -28,9 +28,7 @@ export const SearchSidebar = ({ genres }: SearchSidebarProps) => {
 
   return (
     <div>
-      <h1 className="text-xl text-secondary font-bold mt-5 mb-6">
-        Tous les &quot;{title}&quot;
-      </h1>
+      <h1 className="mb-6 mt-5 text-xl font-bold text-secondary">Tous les &quot;{title}&quot;</h1>
       <Form />
     </div>
   );

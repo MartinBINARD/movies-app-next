@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        "roboto": ["var(--font-roboto)', 'sans-serif"],
-        "montserrat": ["var(--font-montserrat)', 'serif"],
+        roboto: ["var(--font-roboto)', 'sans-serif"],
+        montserrat: ["var(--font-montserrat)', 'serif"],
       },
       colors: {
         primary: "#304886",

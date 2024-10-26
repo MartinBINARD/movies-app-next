@@ -1,19 +1,19 @@
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
-import { MovieSearch } from "../MovieSearch/MovieSearch";
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import { MovieSearch } from '../MovieSearch/MovieSearch';
 
 export const Header = () => {
   return (
-    <header className="font-roboto flex items-center justify-between bg-primary text-white px-5">
+    <header className="flex items-center justify-between bg-primary px-5 font-roboto text-white">
       <div>
         <p>
           <Link href="/">MyMovieApp</Link>
         </p>
       </div>
-      <div className="flex items-center justify-end flex-[0.5] gap-5">
+      <div className="flex flex-[0.5] items-center justify-end gap-5">
         <nav>
-          <ul className="flex gap-5 mr-5">
+          <ul className="mr-5 flex gap-5">
             <li>
               <Link href="/series">Séries</Link>
             </li>

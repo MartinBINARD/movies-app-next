@@ -1,5 +1,5 @@
-import { getMovieByPath } from "@/utils/movieClient";
-import Image from "next/image";
+import { getMovieByPath } from '@/utils/movieClient';
+import Image from 'next/image';
 
 export type MovieCreditsProps = {
   movieId: number;
@@ -27,9 +27,9 @@ export const MovieCredits = async ({ movieId }: MovieCreditsProps) => {
               width={90}
               height={90}
               alt="person.name"
-              className="rounded-full w-24 h-24 object-cover object-[50%_40%] shadow-sm shadow-slate-200"
+              className="h-24 w-24 rounded-full object-cover object-[50%_40%] shadow-sm shadow-slate-200"
             />
-            <p className="font-bold text-xs mb-0">{person.name}</p>
+            <p className="mb-0 text-xs font-bold">{person.name}</p>
           </div>
         ))}
     </div>

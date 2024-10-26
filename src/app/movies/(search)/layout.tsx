@@ -1,21 +1,19 @@
-import { SearchSidebar } from "@/components/search-sidebar/SearchSidebar";
-import { getMovieByPath } from "@/utils/movieClient";
-import { ReactNode } from "react";
+import { SearchSidebar } from '@/components/search-sidebar/SearchSidebar';
+import { getMovieByPath } from '@/utils/movieClient';
+import { ReactNode } from 'react';
 
 interface MovieSearchLayoutProps {
   children: ReactNode;
 }
 
-export const MovieSearchLayout: React.FC<MovieSearchLayoutProps> = async ({
-  children,
-}: MovieSearchLayoutProps) => {
+export const MovieSearchLayout: React.FC<MovieSearchLayoutProps> = async ({ children }: MovieSearchLayoutProps) => {
   const { genres } = await getMovieByPath({
-    path: "/genre/movie/list",
+    path: '/genre/movie/list',
     params: [],
   });
 
   return (
-    <div className="flex my-0 mx-8">
+    <div className="mx-8 my-0 flex">
       <SearchSidebar genres={genres} />
       <div>{children}</div>
     </div>

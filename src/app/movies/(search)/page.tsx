@@ -1,4 +1,4 @@
-import SearchResults, { SearchParamsType } from "./SearchResults";
+import SearchResults, { SearchParamsType } from './SearchResults';
 
 interface MoviesPageProps {
   searchParams: SearchParamsType;

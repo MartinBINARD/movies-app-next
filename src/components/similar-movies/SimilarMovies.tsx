@@ -1,5 +1,5 @@
-import { getMovieByPath } from "@/utils/movieClient";
-import { MediaCard, MediaCardProps } from "../media-card/MediaCard";
+import { getMovieByPath } from '@/utils/movieClient';
+import { MediaCard, MediaCardProps } from '../media-card/MediaCard';
 
 export type SimilarMoviesProps = {
   movieId: number;
@@ -12,7 +12,7 @@ export const SimilarMovies = async ({ movieId }: SimilarMoviesProps) => {
   });
   return (
     <div className="flex justify-center">
-      <div className="flex gap-5 mt-7 mb-12 mx-0">
+      <div className="mx-0 mb-12 mt-7 flex gap-5">
         {results &&
           results
             .slice(0, 6)

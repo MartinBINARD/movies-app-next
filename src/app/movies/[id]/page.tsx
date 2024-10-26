@@ -1,10 +1,10 @@
-import { MovieDetails } from "@/components/movie-details/MovieDetails";
-import { SimilarMovies } from "@/components/similar-movies/SimilarMovies";
-import { getMovieByPath } from "@/utils/movieClient";
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import { MovieDetails } from '@/components/movie-details/MovieDetails';
+import { SimilarMovies } from '@/components/similar-movies/SimilarMovies';
+import { getMovieByPath } from '@/utils/movieClient';
+import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
 
 const TIME_ELAPSED_IN_ONE_HOUR = 3600;
 export const revalidate = TIME_ELAPSED_IN_ONE_HOUR;

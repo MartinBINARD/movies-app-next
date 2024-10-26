@@ -1,11 +1,11 @@
-import { MediaCard, MediaCardProps } from "@/components/media-card/MediaCard";
-import { getMovieByPath } from "@/utils/movieClient";
-import { ReadonlyURLSearchParams } from "next/navigation";
+import { MediaCard, MediaCardProps } from '@/components/media-card/MediaCard';
+import { getMovieByPath } from '@/utils/movieClient';
+import { ReadonlyURLSearchParams } from 'next/navigation';
 
 export interface SearchParamsType extends ReadonlyURLSearchParams {
   sort_by: string | null;
-  "release_date.gte": string | null;
-  "release_date.lte": string | null;
+  'release_date.gte': string | null;
+  'release_date.lte': string | null;
 }
 
 interface SearchResultsProps {
@@ -15,23 +15,23 @@ interface SearchResultsProps {
 
 const SearchResults = async ({ searchParams, genreId }: SearchResultsProps) => {
   const { results } = await getMovieByPath({
-    path: "/discover/movie",
+    path: '/discover/movie',
     params: [
-      { key: "sort_by", value: searchParams.sort_by || "" },
+      { key: 'sort_by', value: searchParams.sort_by || '' },
       {
-        key: "release_date.gte",
-        value: searchParams["release_date.gte"] || "",
+        key: 'release_date.gte',
+        value: searchParams['release_date.gte'] || '',
       },
       {
-        key: "release_date.lte",
-        value: searchParams["release_date.lte"] || "",
+        key: 'release_date.lte',
+        value: searchParams['release_date.lte'] || '',
       },
-      { key: "with_genres", value: genreId },
+      { key: 'with_genres', value: genreId },
     ],
   });
 
   return (
-    <div className="flex flex-wrap gap-7 mt-5 mr-0 mb-7 ml-7">
+    <div className="mb-7 ml-7 mr-0 mt-5 flex flex-wrap gap-7">
       {results &&
         results
           .filter((movie: MediaCardProps) => movie.poster_path)

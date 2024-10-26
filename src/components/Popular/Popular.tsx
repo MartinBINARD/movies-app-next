@@ -1,9 +1,9 @@
-import { getMovieByPath } from "@/utils/movieClient";
-import { MediaCard, MediaCardProps } from "../media-card/MediaCard";
+import { getMovieByPath } from '@/utils/movieClient';
+import { MediaCard, MediaCardProps } from '../media-card/MediaCard';
 
 export const Popular = async () => {
   const { results } = await getMovieByPath({
-    path: "/movie/popular",
+    path: '/movie/popular',
     params: [],
   });
 
@@ -11,9 +11,7 @@ export const Popular = async () => {
 
   return (
     <div>
-      <h2 className="font-roboto text-secondary font-bold text-2xl mt-10 mb-5">
-        Les plus populaires
-      </h2>
+      <h2 className="mb-5 mt-10 font-roboto text-2xl font-bold text-secondary">Les plus populaires</h2>
       <div className="flex gap-[30px]">
         {polularMovies &&
           polularMovies.map((movie: MediaCardProps) => (
