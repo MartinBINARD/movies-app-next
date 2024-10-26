@@ -5,7 +5,7 @@ interface GenreIdPageProps {
   searchParams: SearchParamsType;
 }
 
-export const GenreIdPage = ({ params, searchParams }: GenreIdPageProps) => {
+const GenreIdPage = ({ params, searchParams }: GenreIdPageProps) => {
   return <SearchResults searchParams={searchParams} genreId={params.id} />;
 };
 

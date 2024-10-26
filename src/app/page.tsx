@@ -1,9 +1,7 @@
 import { Genres } from '@/components/genres/Genres';
 import { Popular } from '@/components/Popular/Popular';
 
-const TIME_ELAPSED_IN_ONE_DAY = 86400;
-
-export const revalidate = TIME_ELAPSED_IN_ONE_DAY;
+export const revalidate = 86400;
 
 export default function Home() {
   return (

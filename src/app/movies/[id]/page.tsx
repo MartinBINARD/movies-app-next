@@ -6,8 +6,7 @@ import { Suspense } from 'react';
 
 export const dynamic = 'force-static';
 
-const TIME_ELAPSED_IN_ONE_HOUR = 3600;
-export const revalidate = TIME_ELAPSED_IN_ONE_HOUR;
+export const revalidate = 3600;
 
 interface MovieIdPageProps {
   params: { id: string };

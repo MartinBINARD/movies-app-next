@@ -1,4 +1,5 @@
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { Metadata } from 'next/types';
 import { Header } from '../components/Header/Header';
 import './globals.css';
 
