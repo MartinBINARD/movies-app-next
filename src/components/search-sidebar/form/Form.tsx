@@ -9,11 +9,12 @@ export const Form = () => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const searchParams = new URLSearchParams();
-    searchParams.append('sort_by', form.get('sort'));
-    searchParams.append('release_date.gte', form.get('fromDate'));
-    searchParams.append('release_date.lte', form.get('toDate'));
+    searchParams.append('sort_by', String(form.get('sort')));
+    searchParams.append('release_date.gte', String(form.get('fromDate')));
+    searchParams.append('release_date.lte', String(form.get('toDate')));
 
-    router.push(`${pathname}?${searchParams.toString()}`);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    router.push(`${pathname}?${searchParams.toString()}` as any);
   };
 
   return (
