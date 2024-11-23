@@ -2,6 +2,8 @@ import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import { NextRequest } from 'next/server';
 
+export type LocaleTypes = 'fr' | 'en';
+
 export const availableLocales = ['en', 'fr'] as const;
 export const defaultLocale = 'fr';
 

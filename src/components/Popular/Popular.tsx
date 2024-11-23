@@ -1,13 +1,17 @@
+import { LocaleTypes } from '@/utils/i18n';
 import { getMovieByPath } from '@/utils/movieClient';
 import { MediaCard, MediaCardProps } from '../media-card/MediaCard';
 
-export const Popular = async () => {
+export type PopularProps = { locale: LocaleTypes };
+
+export const Popular = async ({ locale }: PopularProps) => {
   const { results } = await getMovieByPath({
     path: '/movie/popular',
     params: [],
+    language: locale,
   });
 
-  const polularMovies = results.slice(0, 6);
+  const polularMovies = results?.slice(0, 6);
 
   return (
     <div>

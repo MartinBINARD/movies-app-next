@@ -1,3 +1,4 @@
+import { LocaleTypes } from '@/utils/i18n';
 import { getMovieByPath } from '@/utils/movieClient';
 import Link from 'next/link';
 
@@ -6,10 +7,13 @@ export type GenreType = {
   name: string;
 };
 
-export const Genres = async () => {
+export type GenresProps = { locale: LocaleTypes };
+
+export const Genres = async ({ locale }: GenresProps) => {
   const { genres } = await getMovieByPath({
     path: '/genre/movie/list',
     params: [],
+    language: locale,
   });
 
   return (
