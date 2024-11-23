@@ -1,3 +1,4 @@
+import { getDictionary } from '@/utils/dictionaries';
 import { LocaleTypes } from '@/utils/i18n';
 import { getMovieByPath } from '@/utils/movieClient';
 import { MediaCard, MediaCardProps } from '../media-card/MediaCard';
@@ -10,12 +11,13 @@ export const Popular = async ({ locale }: PopularProps) => {
     params: [],
     language: locale,
   });
+  const i18n = await getDictionary(locale);
 
   const polularMovies = results?.slice(0, 6);
 
   return (
     <div>
-      <h2 className="mb-5 mt-10 font-roboto text-2xl font-bold text-secondary">Les plus populaires</h2>
+      <h2 className="mb-5 mt-10 font-roboto text-2xl font-bold text-secondary">{i18n.popular.title}</h2>
       <div className="flex gap-[30px]">
         {polularMovies &&
           polularMovies.map((movie: MediaCardProps) => (

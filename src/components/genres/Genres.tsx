@@ -1,3 +1,4 @@
+import { getDictionary } from '@/utils/dictionaries';
 import { LocaleTypes } from '@/utils/i18n';
 import { getMovieByPath } from '@/utils/movieClient';
 import Link from 'next/link';
@@ -15,10 +16,11 @@ export const Genres = async ({ locale }: GenresProps) => {
     params: [],
     language: locale,
   });
+  const i18n = await getDictionary(locale);
 
   return (
     <div>
-      <h2 className="mb-5 mt-10 font-roboto text-2xl font-bold text-secondary">Parcourir par genres</h2>
+      <h2 className="mb-5 mt-10 font-roboto text-2xl font-bold text-secondary">{i18n.genres.title}</h2>
       <div className="flex flex-wrap gap-5">
         {genres &&
           genres.map((genre: GenreType) => (
