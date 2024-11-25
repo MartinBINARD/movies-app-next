@@ -1,3 +1,4 @@
+import { AuthProvider } from '@/components/auth-provider/AuthProvider';
 import { Header } from '@/components/Header/Header';
 import { montserrat, roboto } from '@/fonts';
 import { availableLocales, LocaleTypes } from '@/utils/i18n';
@@ -25,7 +26,9 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
     <html lang="en">
       <body className={`${roboto.variable} ${montserrat.variable}`}>
         <Header locale={locale} />
-        <main>{children}</main>
+        <main>
+          <AuthProvider>{children}</AuthProvider>
+        </main>
       </body>
     </html>
   );

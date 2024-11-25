@@ -19,16 +19,21 @@ export const Header = ({ locale }: HeaderProps) => {
         <nav>
           <ul className="mr-5 flex gap-5">
             <li>
-              <Link href="/series">Séries</Link>
+              <Link href={`/${locale}/series`}>Séries</Link>
             </li>
             <li>
-              <Link href="/movies">Films</Link>
+              <Link href={`/${locale}/movies`}>Films</Link>
+            </li>
+            <li>
+              <Link href={`/${locale}/signup`}>Inscription</Link>
             </li>
           </ul>
         </nav>
         <MovieSearch />
         <div className="flex items-center">
-          <FontAwesomeIcon icon={faUser} />
+          <Link href={`/${locale}/user/profile`}>
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
         </div>
         <LanguageSelector />
       </div>
