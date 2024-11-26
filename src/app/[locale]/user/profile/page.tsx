@@ -5,7 +5,6 @@ import { getHydratedMovies } from '@/utils/movieClient';
 import prisma from '@/utils/prisma';
 import { getServerSession } from 'next-auth';
 import React from 'react';
-import { Movie } from '../../movies/(search)/SearchResults';
 
 export type ProfilePageProps = {
   params: {
@@ -14,16 +13,25 @@ export type ProfilePageProps = {
 };
 
 const ProfilePage = async ({ params: { locale } }: ProfilePageProps) => {
-  const { user: userSession } = await getServerSession();
+  const session = await getServerSession();
 
-  const { movieLikes } = await prisma.user.findFirst({
-    where: { email: userSession.email },
+  if (!session || !session.user || !session?.user?.email) {
+    console.error('Aucune session utilisateur ou utilisateur trouvé');
+    return null; // ou retournez un objet vide selon vos besoins
+  }
+
+  const userSession = session.user.email;
+
+  const user = await prisma.user.findFirst({
+    where: { email: userSession },
     include: {
       movieLikes: true,
     },
   });
 
-  const movies = await getHydratedMovies(movieLikes.map((movie: Movie) => movie.id));
+  const movieLikes = user?.movieLikes ?? [];
+
+  const movies = await getHydratedMovies(movieLikes.map((movie) => movie.id));
 
   return (
     <div className="px-12 pb-0 pt-3">

@@ -13,7 +13,7 @@ const handler = NextAuth({
           placeholder: 'Votre mot de passe',
         },
       },
-      async authorize(credentials, request) {
+      async authorize(credentials) {
         const response = await fetch('http://localhost:3000/api/login', {
           method: 'POST',
           body: JSON.stringify({

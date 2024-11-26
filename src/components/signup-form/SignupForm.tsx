@@ -1,4 +1,5 @@
 'use client';
+import { Route } from 'next';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { FormEvent, useEffect } from 'react';
@@ -9,7 +10,7 @@ export const SignupForm: React.FC = () => {
 
   useEffect(() => {
     if (status === 'authenticated') {
-      router.push('/user/profile');
+      router.push('/user/profile' as Route);
     }
   }, [status, router]);
 

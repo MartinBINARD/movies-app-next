@@ -4,6 +4,7 @@ import { useCurrentLanguage } from '@/hooks/useCurrentLanguage';
 import { availableLocales } from '@/utils/i18n';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Route } from 'next';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -30,7 +31,7 @@ export const LanguageSelector = () => {
           .filter((locale) => locale !== currentLanguage)
           .map((locale) => (
             <li key={locale}>
-              <Link href={`/${locale}`}>{locale}</Link>
+              <Link href={`/${locale}` as Route}>{locale}</Link>
             </li>
           ))}
       </ul>

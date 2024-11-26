@@ -1,6 +1,7 @@
 import { getDictionary } from '@/utils/dictionaries';
 import { LocaleTypes } from '@/utils/i18n';
 import { getMovieByPath } from '@/utils/movieClient';
+import { Route } from 'next';
 import Link from 'next/link';
 
 export type GenreType = {
@@ -25,7 +26,7 @@ export const Genres = async ({ locale }: GenresProps) => {
         {genres &&
           genres.map((genre: GenreType) => (
             <div key={genre.id} className="w-[20%] flex-none bg-primary py-2.5 text-center text-white">
-              <Link href={`${locale}/movies/genres/${genre.id}`}>
+              <Link href={`${locale}/movies/genres/${genre.id}` as Route}>
                 <p className="m-0">{genre.name}</p>
               </Link>
             </div>

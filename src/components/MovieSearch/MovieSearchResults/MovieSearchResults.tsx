@@ -1,3 +1,4 @@
+import { Route } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,7 +19,7 @@ export const MovieSearchResults = ({ movieResults }: MovieSearchResultsProps) =>
       {movieResults?.map((movie: Movie) => (
         <div key={movie.id}>
           <Link
-            href={`/movies/${movie.id}`}
+            href={`/movies/${movie.id}` as Route}
             onMouseDown={(e) => e.preventDefault()}
             className="flex items-center border-b border-gray-200 py-[10px]"
           >

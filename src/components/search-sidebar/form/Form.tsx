@@ -1,4 +1,5 @@
 'use client';
+import { Route } from 'next';
 import { usePathname, useRouter } from 'next/navigation';
 
 export const Form = () => {
@@ -13,8 +14,7 @@ export const Form = () => {
     searchParams.append('release_date.gte', String(form.get('fromDate')));
     searchParams.append('release_date.lte', String(form.get('toDate')));
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    router.push(`${pathname}?${searchParams.toString()}` as any);
+    router.push(`${pathname}?${searchParams.toString()}` as Route);
   };
 
   return (
