@@ -1,6 +1,16 @@
-import { MediaCard, MediaCardProps } from '@/components/media-card/MediaCard';
+import { MediaCard } from '@/components/media-card/MediaCard';
+import { LocaleTypes } from '@/utils/i18n';
 import { getMovieByPath } from '@/utils/movieClient';
 import { ReadonlyURLSearchParams } from 'next/navigation';
+import React from 'react';
+
+export interface Movie {
+  id: number;
+  title: string;
+  poster_path: string;
+  vote_average: number;
+  release_date: number;
+}
 
 export interface SearchParamsType extends ReadonlyURLSearchParams {
   sort_by: string | null;
@@ -11,9 +21,10 @@ export interface SearchParamsType extends ReadonlyURLSearchParams {
 interface SearchResultsProps {
   searchParams: SearchParamsType;
   genreId: string;
+  locale: LocaleTypes;
 }
 
-const SearchResults = async ({ searchParams, genreId }: SearchResultsProps) => {
+const SearchResults = async ({ searchParams, genreId, locale }: SearchResultsProps) => {
   const { results } = await getMovieByPath({
     path: '/discover/movie',
     params: [
@@ -34,16 +45,11 @@ const SearchResults = async ({ searchParams, genreId }: SearchResultsProps) => {
     <div className="mb-7 ml-7 mr-0 mt-5 flex flex-wrap gap-7">
       {results &&
         results
-          .filter((movie: MediaCardProps) => movie.poster_path)
-          .map((movie: MediaCardProps) => (
-            <MediaCard
-              key={movie.id}
-              id={movie.id}
-              title={movie.title}
-              poster_path={movie.poster_path}
-              vote_average={movie.vote_average}
-              release_date={movie.release_date}
-            />
+          .filter((movie: Movie) => movie.poster_path)
+          .map((movie: Movie) => (
+            <React.Fragment key={movie.id}>
+              <MediaCard media={movie} locale={locale} />
+            </React.Fragment>
           ))}
     </div>
   );

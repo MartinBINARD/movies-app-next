@@ -24,7 +24,7 @@ export const LanguageSelector = () => {
         </span>
       </p>
       <ul
-        className={`absolute -left-[5px] right-0 top-[35px] z-20 flex origin-top scale-y-0 list-none justify-center overflow-hidden bg-primary pb-[10px] transition-all duration-300 ease-in-out ${isOpen ? 'scale-y-100' : ''}`}
+        className={`absolute -left-[5px] right-0 top-[35px] z-50 flex origin-top scale-y-0 list-none justify-center overflow-hidden bg-primary pb-[10px] transition-all duration-300 ease-in-out ${isOpen ? 'scale-y-100' : ''}`}
       >
         {availableLocales
           .filter((locale) => locale !== currentLanguage)

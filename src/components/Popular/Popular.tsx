@@ -1,7 +1,9 @@
+import { Movie } from '@/app/[locale]/movies/(search)/SearchResults';
 import { getDictionary } from '@/utils/dictionaries';
 import { LocaleTypes } from '@/utils/i18n';
 import { getMovieByPath } from '@/utils/movieClient';
-import { MediaCard, MediaCardProps } from '../media-card/MediaCard';
+import React from 'react';
+import { MediaCard } from '../media-card/MediaCard';
 
 export type PopularProps = { locale: LocaleTypes };
 
@@ -20,15 +22,10 @@ export const Popular = async ({ locale }: PopularProps) => {
       <h2 className="mb-5 mt-10 font-roboto text-2xl font-bold text-secondary">{i18n.popular.title}</h2>
       <div className="flex gap-[30px]">
         {polularMovies &&
-          polularMovies.map((movie: MediaCardProps) => (
-            <MediaCard
-              key={movie.id}
-              id={movie.id}
-              title={movie.title}
-              poster_path={movie.poster_path}
-              vote_average={movie.vote_average}
-              release_date={movie.release_date}
-            />
+          polularMovies.map((movie: Movie) => (
+            <React.Fragment key={movie.id}>
+              <MediaCard media={movie} locale={locale} />
+            </React.Fragment>
           ))}
       </div>
     </div>

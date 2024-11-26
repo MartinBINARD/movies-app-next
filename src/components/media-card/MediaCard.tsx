@@ -1,21 +1,22 @@
+import { Movie } from '@/app/[locale]/movies/(search)/SearchResults';
+import { LocaleTypes } from '@/utils/i18n';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Like } from './like/Like';
 
 export interface MediaCardProps {
-  id: number;
-  title: string;
-  poster_path: string;
-  vote_average: number;
-  release_date: number;
+  media: Movie;
+  locale: LocaleTypes;
 }
 
-export const MediaCard = (media: MediaCardProps) => {
+export const MediaCard = ({ media, locale }: MediaCardProps) => {
   const { id, title, poster_path, vote_average, release_date } = media;
 
   return (
     <div className="w-52 rounded-lg font-montserrat shadow-[0_2px_8px_rgba(0,0,0,0.25)]">
-      <Link href={`/movies/${id}`}>
+      <Link href={`${locale}/movies/${id}`}>
         <div className="relative h-[300px] w-full overflow-hidden">
+          <Like mediaId={id} />
           <Image src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${poster_path}`} alt={title} fill className="rounded-t-lg" />
         </div>
         <div className="relative px-2.5 py-3">

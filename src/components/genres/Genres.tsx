@@ -25,7 +25,7 @@ export const Genres = async ({ locale }: GenresProps) => {
         {genres &&
           genres.map((genre: GenreType) => (
             <div key={genre.id} className="w-[20%] flex-none bg-primary py-2.5 text-center text-white">
-              <Link href={`/movies/genres/${genre.id}`}>
+              <Link href={`${locale}/movies/genres/${genre.id}`}>
                 <p className="m-0">{genre.name}</p>
               </Link>
             </div>

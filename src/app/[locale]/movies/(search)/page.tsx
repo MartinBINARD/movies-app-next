@@ -5,7 +5,7 @@ interface MoviesPageProps {
 }
 
 const MoviesPage = ({ searchParams }: MoviesPageProps) => {
-  return <SearchResults searchParams={searchParams} genreId="" />;
+  return <SearchResults searchParams={searchParams} genreId="" locale={'fr'} />;
 };
 
 export default MoviesPage;
